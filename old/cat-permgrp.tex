@@ -1,0 +1,230 @@
+\begin{frame}{Permutation Homomorphisms (1)}
+    \begin{defn}
+        Let $G \leq \sym \Omega$ and $H \leq \sym \Delta$.
+        \\
+        \pause
+        Let
+        $f \from \Omega \to \Delta$
+        be a map
+        and
+        $\varphi \from G \to H$
+        be a group hom..
+        \\
+        \pause
+        The pair $(f, \varphi)$ is a
+        \emph{%
+        permutation hom. from $(G, \Omega)$ to $(H, \Delta)$
+        }
+        if
+        \\
+        \pause
+        $\forall g \in G :$
+        \[
+        \begin{tikzcd}[ampersand replacement=\&]
+            \Omega
+                \ar[r, "g"]
+                \ar[d, "f"]
+            \&
+            \Omega
+                \ar[d, "f"]
+            %
+            \\
+            %
+            \Delta
+                \ar[r, "\varphi(g)"]
+            \&
+            \Delta
+        \end{tikzcd}
+        \]
+    \end{defn}
+\end{frame}
+
+\begin{frame}{Permutation Homomorphisms (2)}
+    \begin{lemma}
+        Let $G \leq \sym \Omega$ and $f \from \Omega \to \Delta$.
+        There exists a permutation hom.
+        $(f, \varphi)$
+        if and only if
+        \pause
+        \[
+            \sset{ f ^ {-1}(\set{x}) }{ x \in \im f }
+        \]
+        is $G$-invariant.
+    \end{lemma}
+\end{frame}
+
+\note{
+    Give examples:
+    \\
+    map to orbits
+    \\
+    factor out block systems
+    \\
+    if $f$ is bijection such a $\varphi$ always exists.
+}
+
+\begin{frame}{Permutation Homomorphisms (3)}
+    \[
+    \begin{tikzcd}[ampersand replacement=\&]
+        \Omega
+            \ar[r, "g"]
+            \ar[d, "f"]
+        \&
+        \Omega
+            \ar[d, "f"]
+        %
+        \\
+        %
+        \Delta
+            \ar[r, "\varphi(g)"]
+        \&
+        \Delta
+    \end{tikzcd}
+    \]
+
+    \begin{rem}
+        Let $G \leq \sym \Omega$ and $H \leq \sym \Delta$.
+        A surjective map $f \from \Omega \onto \Delta$
+        \pause
+        uniquely determines,
+        if it exists,
+        a permutation homomorphism
+        $(f, \varphi)$.
+    \end{rem}
+\end{frame}
+
+\begin{frame}{PermGrp}
+    \begin{defn}
+        The \emph{category of permutation groups}
+        $\permgrp$
+        consists of
+        \pause
+        \vspace{-0.5em}
+        \begin{itemize}
+            \item
+            all pairs $(G, \Omega)$ with $G \leq \sym \Omega$ as objects
+            \pause
+            \item
+            permutation homomorphisms as morphisms.
+        \end{itemize}
+    \end{defn}
+\end{frame}
+
+\note{equiv to cat of $(G, \Omega, \rho)$}
+
+\begin{frame}{Product in PermGrp}
+    \begin{lemma}
+        Let $G \leq \sym \Omega$ and $H \leq \sym \Delta$ be permutation
+        groups.
+        Then $(G \times H, \Omega \times \Delta)$ with
+        \pause
+        \[
+        \begin{tikzcd}[ampersand replacement=\&, row sep=small]
+            G
+            \&
+            G \times H
+                \ar{l}[above]{\pi_1}
+                \ar[r, "\pi_2"]
+            \&
+            H
+            \\
+            \Omega
+            \&
+            \Omega \times \Delta
+                \ar{l}[above]{p_1}
+                \ar[r, "p_2"]
+            \&
+            \Delta
+        \end{tikzcd}
+        \]
+        is a product in $\permgrp$.
+    \end{lemma}
+\end{frame}
+
+\begin{frame}{Cartesian Decompositions}
+    \begin{defn}
+        Let $\mathcal C$ be a category and $X$ an object of $\mathcal C$.
+        A family of morphisms $(f_i)_{i \in I}$ with
+        $f_i \from X \to X_i$
+        is called a
+        \emph{cartesian decomposition of $X$}
+        if
+        \pause
+        \[
+            \prod_{i \in I} f_i
+            \from
+            X
+            \to
+            \prod_{i \in I} X_i
+        \]
+        is an isomorphism.
+    \end{defn}
+    \pause
+
+    \begin{lemma}
+        %Let $\mathcal C$ be a category and $X$ an object of $\mathcal C$.
+        A family $(f_i)_{i \in I}$ is a cartesian decomposition of $X$
+        if and only if
+        \\
+        $X$ with $(f_i)_{i \in I}$ forms a product in $\mathcal C$.
+    \end{lemma}
+\end{frame}
+
+\note[itemize]
+{
+    \item
+    explain cartesian decomposition of sets and of perm groups
+    \item
+    mention combinatorial cartesian decompositions by
+    Laszlo Kovacs, Cheryl Praeger and Csaba Schneider!
+    \\
+    their theorem
+    \\
+    cartesian decompositions are to PA WPs what
+    block systems are to IMP WPs.
+    \item
+    cartesian decomposition on sets, groups and to deconstruct $\soc G$
+}
+
+\begin{frame}{Homogeneous Cartesian Decompositions}
+    \begin{defn}
+        Let $(f_i)_{i \in I}$ be a cartesian decomposition of $X$
+        with $f_i \from X \to X_i$.
+        \\
+        We call $(f_i)_{i \in I}$
+        \emph{homogeneous}
+        if
+        \\
+        \pause
+        \vspace{-1em}
+        \[
+            \hspace{3em} X_i \cong X_j ~~~ \forall i, j \in I.
+        \]
+    \end{defn}
+    \pause
+
+    \begin{defn}
+        Let $(f_i)_{i \in I}$ be a cartesian decomposition of $X$
+        with $f_i \from X \to X_i$.
+        \\
+        We call $(f_i)_{i \in I}$
+        \emph{strictly homogeneous}
+        if
+        \\
+        \pause
+        \vspace{-1em}
+        \[
+            \hspace{3em} X_i = X_j ~~~ \forall i, j \in I.
+        \]
+    \end{defn}
+    \pause
+
+    $\leadsto$
+    Compute a strictly homogeneous cartesian decomposition of $\soc G$!
+\end{frame}
+
+\note
+{
+Explain hom cartesian decomposition and str hom cartesian decomposition of
+$\Omega$ and then of $\soc G$.
+}
