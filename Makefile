@@ -1,7 +1,7 @@
 # Settings
 TARGET=main
 PREFIX=Socle
-OUTNAME=2019-Siegen-Quasipolynomial-normalisers-category-permutation-groups
+OUTNAME=2020-PhD-Defense-Sergio-Siccha
 TEX=latexmk --pdf -file-line-error -halt-on-error
 
 # Rules
