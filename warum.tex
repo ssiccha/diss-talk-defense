@@ -5,6 +5,7 @@ Warum Gruppen?
 Gruppen
 \begin{itemize}
 \item beschreiben Symmetrien
+\pause
 \item sind nützlich
 \pause
 \item sind interessant
@@ -24,7 +25,6 @@ Anwendungen
 \begin{frame}{Gruppen (2)}
 \begin{columns}
 \begin{column}{0.4\textwidth}
-Vier Eigenschaften
 \vspace{6.65em}
 \end{column}
 \begin{column}{0.5\textwidth}
@@ -39,8 +39,10 @@ Vier Eigenschaften
 \begin{frame}[noframenumbering]{Gruppen (2)}
 \begin{columns}
 \begin{column}{0.4\textwidth}
+\pause
 Vier Eigenschaften
 \begin{itemize}
+\pause
 \item Neutrales Element
 \pause
 \item Abgeschlossen
@@ -72,14 +74,21 @@ interagieren.
 }
 
 \begin{frame}{Klassifikation endlicher einfacher Gruppen}
-Was sind die kleinsten Bausteine\footnote{math.: einfache Gruppen} der Gruppen?
-
-\TODO{Bild Periodensystem einfacher Gruppen. Von Kay Magaard? Wann
-abgeschlossen? Siehe intro diss}
+%Was sind die kleinsten Bausteine\footnote{math.: einfache Gruppen} der Gruppen?
+%
+\pause
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.9\textwidth]{./pictures/periodic-table-of-groups-cropped.pdf}
+\caption{Periodensystem endlicher einfacher Gruppen%
+\footnote{By Ivan Andrus, from
+\href{https://irandrus.wordpress.com}{irandrus.wordpress.com}}
+}
+\end{figure}
 \end{frame}
 
 \note{
-Klassifikation ist einer der Stützpfeiler 
+Klassifikation ist einer der Stützpfeiler
 }
 
 \begin{frame}{Normalisatoren}
@@ -113,23 +122,14 @@ Bester bekannter allgemeiner Algorithmus:
 einfach exponentielle Laufzeit $2 ^ {O(n)}$ von Daniel Wiebking.
 
 \pause
-\TODO{Bild vom Langen Johann. Captions und footnotes!}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.3\textwidth]{./pictures/The_Sun.jpg}
+\caption{Sonne%
+\footnote{The Sun, By NASA/SDO (AIA) - Public Domain}
+}{Sonn}
+\end{figure}
 \end{frame}
-
-\note{Vergleich mit Hochhaus: wollen jemanden besuchen und kennen nur den
-Nachnamen.
-Szenario 1: Klingelschilder sind alphabetisch sortiert
-Szenario 2: Klingelschilder sind nicht sortiert
-Szenario 3: Klingelschilder sind nicht beschriftet
-
-Berechnen von Normalisatoren bewegt sich zwischen Szenario 2 und 3, je nachdem
-welche Gruppe man erwischt hat.
-
-Source:
-Bild: BR/Carlo Schindhelm
-URL: https://www.br.de/radio/bayern2/sendungen/zeit-fuer-bayern/hochhaus-langer-johann-erlangen-100.html
-Datum: 08.07.20
-}
 
 \note{Überleitung:
 Was macht man, wenn man ein großes Problem nicht lösen kann? Man sucht
@@ -147,7 +147,15 @@ $G$-invariante Partition von $\Omega$ gibt,
 sonst \emph{primitiv}.
 
 \pause
-\TODO{Bild Eier}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.3\textwidth]{./pictures/787px-Freerange_eggs_cropped.jpg}
+~
+\includegraphics[width=0.3\textwidth]{./pictures/787px-Freerange_eggs_cropped.jpg}
+\caption{Partition von Eiern%
+\footnote{``Freerange eggs.jpg'' cropped - Wikimedia Commons - CC BY-SA 3.0}
+}
+\end{figure}
 \end{frame}
 
 \note{
@@ -171,8 +179,8 @@ in
 \end{block}
 \vspace{1.5em}
 \pause
-Beachte: Für $H \leq \sym \Omega$ gilt
-$N_{H}(G) = H \cap N_{\sym \Omega}(G)$.
+Beachte: Für $M \leq \sym \Omega$ gilt
+$N_{M}(G) = M \cap N_{\sym \Omega}(G)$.
 \end{frame}
 
 \note{
@@ -184,20 +192,9 @@ bessere Algorithmen für "zusammengesetzte" Gruppen.
 \section{Strategie}
 \note{Struktur primitiver Gruppen ausnutzen}
 \begin{frame}{Permutationsisomorphie}
-\pause
-\begin{block}{Notation}
-\begin{itemize}
-\item
-$\Omega$, $\Delta$ bezeichnen Mengen
-\item
-$\sym \Omega$:
-Gruppe aller Permutationen von $\Omega$
-\item
-$\omega \in \Omega,\, g \in G$. $\omega ^ g := g(\omega)$
-\end{itemize}
-\end{block}
+Notation: $\omega ^ g := g(\omega)$.
+\vspace{2em}
 
-\pause
 Zwei Gruppen $G \leq \sym \Omega$ und $H \leq \sym \Delta$ heißen
 \emph{permutationsisomorph}, wenn
 Isomorphismen $f : \Omega \to \Delta$ und $\phi : G \to H$ existieren,
@@ -226,27 +223,16 @@ Bis auf Permutationsisomorphie kennen wir
 \end{block}
 \end{frame}
 
-\note{
-Sockel charakteristisch einfach $\Rightarrow$ Rekursion zu einfachen
-Gruppen
-
-Außerdem:
-$N(\soc G)$ enthält $N(G)$.
-Index von $G$ in $N(\soc G)$ ist winzig.
-$N(\soc G)$ entsteht durch Produktop. Kranzprodukte.
-}
-
-\begin{frame}{Strategie}
+\begin{frame}{Hauptschritte}
 Sei $G \leq \sym \Omega$ eine primitive Permutationsgruppe.
-
-\pause
-Sei $M := N_{\sym \Omega}(\soc G)$.
-Es gilt $N_{\sym \Omega}(G) = N_M(G)$.
+Berechne $N_{\sym \Omega}(G)$.
 
 \pause
 Bestimme
 \begin{itemize}
 \item $M := N_{\sym \Omega}(\soc G)$.
+Es gilt $N_{\sym \Omega}(G) = N_M(G)$.
+
 \pause
 \item Gruppenhom.
 $
@@ -266,27 +252,25 @@ Log. Reduktion einfach. Dann im Endeffekt nur Algorithmus von Daniel Wiebking.
 Normalisator des Sockels mehr Aufwand.
 }
 
-\begin{frame}{Logarithmische Reduktion}
-Kranzprodukt in Produktoperation
-$\rightarrow$
-imprimitive Operation
-
-\pause
-Sockel herausfaktorisieren
-\end{frame}
-
-\note{
-Produkt $\rightarrow$ imprimitiv macht $d ^ \ell$ zu $d \cdot \ell$ Punkten.
-
-Kranzprodukt:
-\begin{itemize}
-\item Symmetrische Gruppe auf Anzahl Komponenten von $\Omega ^ {\ast}$.
-\item Sockel einfache Gruppen + äußere Automorphismen.
-Nach herausfaktorisieren des Sockels bleiben nur die äußeren Automorphismen.
-\end{itemize}
-
-
-
-Wichtig:
-$\log ^ 2(n)$ würde nur quasipolynomiellen Algorithmus liefern.
-}
+%\begin{frame}{Logarithmische Reduktion}
+%Kranzprodukt in Produktoperation
+%$\rightarrow$
+%imprimitive Operation
+%
+%\pause
+%Sockel herausfaktorisieren
+%\end{frame}
+%
+%\note{
+%Produkt $\rightarrow$ imprimitiv macht $d ^ \ell$ zu $d \cdot \ell$ Punkten.
+%
+%Kranzprodukt:
+%\begin{itemize}
+%\item Symmetrische Gruppe auf Anzahl Komponenten von $\Omega ^ {\ast}$.
+%\item Sockel einfache Gruppen + äußere Automorphismen.
+%Nach herausfaktorisieren des Sockels bleiben nur die äußeren Automorphismen.
+%\end{itemize}
+%
+%Wichtig:
+%$\log ^ 2(n)$ würde nur quasipolynomiellen Algorithmus liefern.
+%}

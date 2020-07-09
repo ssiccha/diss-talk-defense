@@ -1,54 +1,61 @@
 \note{
 Perm-iso in kanonische Gestalt rekonstruieren.
 Dann Klassifikation endlicher einfacher Gruppen anwenden.
+}
 
+\note{
 Typ PA: einfachster nicht-trivialer Fall.
 }
 
-\begin{frame}{Schwach kanonische Form (1)}
-\begin{block}{Typ PA}
-Sei $G \leq \sym \Omega$ eine primitive Gruppe vom Typ PA.
-\pause
-Dann ist $G$ in \emph{schwach kanonischer Form}, falls
+\begin{frame}{PA Typ}
+Sei $G \leq \sym \Omega$ eine primitive Gruppe.
+Dann ist $G$ vom \emph{Typ PA}, falls
 eine einfache Gruppe
 $T \leq \sym \Delta$
-existiert,
-so dass
-$\Omega = \Delta ^ \ell$ und
-$\soc G = T ^ \ell \leq \sym( \Delta ^ \ell)$ ist.
-\end{block}
+und ein Permutationsiso-
+morphismus $(f : \Omega \to \Delta ^ \ell,~ \phi : G \to H)$ existieren
+mit
+\[
+\phi (\soc G) = T ^ \ell \leq \sym(\Delta ^ \ell).
+\]
 
 \pause
-\begin{block}{Satz}
-$G$ wie oben. Dann kann
+\begin{block}{Korollar}
+$G \leq \sym(\Delta ^ \ell)$ primitiv mit
+$\soc G = T ^ \ell$.
+Dann ist
 \[
     N_{\sym (\Delta ^ \ell)}(\soc G) =
-    N_{\sym \Delta}(T) \wr S_\ell
+    N_{\sym \Delta}(T) \wr S_\ell.
 \]
-in polynomieller Zeit berechnet werden.
 \end{block}
 \end{frame}
 
-\begin{frame}{Schwach kanonische Form (2)}
-\begin{block}{Typ PA}
-Sei $G \leq \sym \Omega$ eine primitive Gruppe vom Typ PA.
+\begin{frame}{Schwach kanonische Form - Typ PA}
+Sei $G \leq \sym(\Delta ^ \ell)$ eine primitive Gruppe vom Typ PA.
+\pause
 Dann ist $G$ in \emph{schwach kanonischer Form}, falls
 eine einfache Gruppe
 $T \leq \sym \Delta$
-existiert,
-so dass
-$\Omega = \Delta ^ \ell$ und
-$\soc G = T ^ \ell \leq \sym( \Delta ^ \ell)$ ist.
+existiert mit
+\[
+\soc G = T ^ \ell.
+\]
+\end{frame}
+
+
+\begin{frame}{Schwach kanonische Form}
+\begin{block}{Satz}
+Sei $G \leq \sym \Omega$ eine primitive Gruppe. Ein Permutationsiso. in schwach
+kanonische Form kann in polynomieller Zeit berechnet werden.
 \end{block}
 
 \pause
 \begin{block}{Satz}
-Sei $G \leq \sym \Omega$ eine primitive Gruppe. Ein Permutationsiso. in schwach
-kanonische Form kann in Las Vegas fast-linearer Zeit
-und in deterministisch polynomieller Zeit
-berechnet werden.
+Sei $G \leq \sym \Omega$ eine primitive Gruppe in schwach kanonischer Form.
+Dann kann $N_{\sym (\Omega)}(\soc G)$
+in polynomieller Zeit berechnet werden.
 \end{block}
-\vspace{2em}
 \end{frame}
 
 \note{das Beste zum Schluss.
@@ -66,70 +73,27 @@ Punktabbildung $f : \Omega \to \Delta$ gegeben.
 
 Also sollte es ausreichen $\Omega$ in $\Delta ^ \ell$ zu zerlegen.}
 
-\begin{frame}{Permutationsmorphismen}
-Seien $G \leq \sym \Omega$, $H \leq \sym \Delta$ Gruppen
-mit den natürlichen Operationen
-$\rho_G$ und $\rho_H$
-\pause
-und
-seien
-$f : \Omega \to \Delta$, $\phi : G \to H$.
-\pause
-Das Paar $F = (f, \phi)$ heißt
+\begin{frame}{Morphismen von Permutationsgruppen}
+
+Seien $f : \Omega \to \Delta$ und $\phi : G \to H$.
+Ein Paar $F = (f, \phi)$ heißt
 \emph{Permutationsmorphismus von $G$ nach $H$},
 falls
+$\forall g \in G, \omega \in \Omega$:
 \[
-\begin{tikzcd}[ampersand replacement=\&]
-    \Omega \times G
-        \ar[r, "\rho_G"]
-        \ar[d, "f \times \varphi"]
-    \&
-    \Omega
-        \ar[d, "f"]
-    %
-    \\
-    %
-    \Delta \times H
-        \ar[r, "\rho_H"]
-    \&
-    \Delta
-\end{tikzcd}
+    f( \omega ^ g ) = f(\omega) ^ {\phi(g)}.
 \]
-kommutiert.
 
 \pause
 \begin{block}{Satz}
-Permutationsgruppen zusammen mit Permutationsmorphismen und ``vertikaler''
+Permutationsgruppen zusammen mit Permutationsmorphismen und komponentenweiser
 Verknüpfung bilden eine Kategorie $\mathbf{PermGrp}$.
 \end{block}
 \end{frame}
 
 \note{
-Falls Zeit ist:
-Jede Permutationsgruppen kann als Kategorie, nämlich als Gruppoid, modelliert
-werden.
-$\Omega$ ist Menge der Objekte.
-$Mor(\alpha, \beta) = \set{ g \in G ~|~ \alpha ^ g = \beta }$.
-
-Permutationsmorphismen sind dann Funktoren zwischen diesen Gruppoiden.
+So berechnet man also Normalisatoren. :-)
 }
-
-\begin{frame}{Permutationsmorphismen: Produkte (1)}
-\begin{block}{Satz}
-$\mathbf{PermGrp}$ enthält alle endlichen Produkte.
-\end{block}
-\end{frame}
-
-\begin{frame}{Zusammenfassung}
-Der Algorithmus:
-\begin{itemize}
-\item Schwach kanonische Form
-\item Normalisator des Sockels
-\item Logarithmische Reduktion
-\item $2 ^ {O(n)}$ Algorithmus von Wiebking
-\item Urbild unter der Reduktion
-\end{itemize}
-\end{frame}
 
 \begin{frame}[standout]
 Danke!
@@ -139,6 +103,13 @@ Danke!
 Abschließende Worte?
 Wie zurück vom Detaillierten zum großen Ganzen?
 }
+
+\appendix
+\begin{frame}{Permutationsmorphismen: Produkte (1)}
+\begin{block}{Satz}
+$\mathbf{PermGrp}$ enthält alle endlichen Produkte.
+\end{block}
+\end{frame}
 
 \begin{frame}{Permutationsmorphismen: Produkte (2)}
 \begin{block}{Beispiel}
