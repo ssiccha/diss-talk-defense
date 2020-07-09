@@ -4,6 +4,7 @@ Warum Gruppen?
 \pause
 Gruppen
 \begin{itemize}
+\item beschreiben Symmetrien
 \item sind nützlich
 \pause
 \item sind interessant
@@ -21,18 +22,10 @@ Anwendungen
 }
 
 \begin{frame}{Gruppen (2)}
-Gruppen beschreiben Symmetrien.
-\\[-2em]
 \begin{columns}
 \begin{column}{0.4\textwidth}
 Vier Eigenschaften
-\begin{itemize}
-\pause
-\item Neutrales Element
-\pause
-\item Abgeschlossen
-\vspace{3.2em}
-\end{itemize}
+\vspace{6.65em}
 \end{column}
 \begin{column}{0.5\textwidth}
 \begin{center}
@@ -44,13 +37,12 @@ Vier Eigenschaften
 \end{frame}
 
 \begin{frame}[noframenumbering]{Gruppen (2)}
-Gruppen beschreiben Symmetrien.
-\\[-2em]
 \begin{columns}
 \begin{column}{0.4\textwidth}
 Vier Eigenschaften
 \begin{itemize}
 \item Neutrales Element
+\pause
 \item Abgeschlossen
 \pause
 \item Invertierbar
@@ -65,6 +57,7 @@ Vier Eigenschaften
 \end{column}
 \end{columns}
 \vspace{-2em}
+\pause
 Gruppe die aus Vertauschungen besteht:
 \emph{Permutationsgruppe}.
 
@@ -73,15 +66,16 @@ Gruppe die aus Vertauschungen besteht:
 \end{frame}
 
 \note{
-Im Folgenden immer Permutationsgruppen.
+Eine Anwendung der Gruppentheorie:
+Eigenschaften des Objekts davon ableiten, wie die Symmetrien miteinander
+interagieren.
 }
 
-\begin{frame}{Klassifikation einfacher Gruppen}
+\begin{frame}{Klassifikation endlicher einfacher Gruppen}
 Was sind die kleinsten Bausteine\footnote{math.: einfache Gruppen} der Gruppen?
 
-\TODO{Bild Periodensystem einfacher Gruppen. Von Kay Magaard?}
-
-Wie kann ich Gruppen zerlegen und zusammensetzen?
+\TODO{Bild Periodensystem einfacher Gruppen. Von Kay Magaard? Wann
+abgeschlossen? Siehe intro diss}
 \end{frame}
 
 \note{
@@ -106,16 +100,22 @@ $.
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Experimente}
-Untersuchung mithilfe von Computern
-\begin{itemize}
-\item Manche Fragen können einfach beantwortet werden $\ldots$
-\item $\ldots$ andere hingegen nur mit großem Aufwand.
-\end{itemize}
-\end{frame}
+%\begin{frame}{Experimente}
+%Untersuchung mithilfe von Computern
+%\begin{itemize}
+%\item Manche Fragen können einfach beantwortet werden $\ldots$
+%\item $\ldots$ andere hingegen nur mit großem Aufwand.
+%\end{itemize}
+%\end{frame}
 
 \begin{frame}{Wie schwer?}
+Bester bekannter allgemeiner Algorithmus:
+einfach exponentielle Laufzeit $2 ^ {O(n)}$ von Daniel Wiebking.
+
+\pause
 \TODO{Bild vom Langen Johann. Captions und footnotes!}
+\end{frame}
+
 \note{Vergleich mit Hochhaus: wollen jemanden besuchen und kennen nur den
 Nachnamen.
 Szenario 1: Klingelschilder sind alphabetisch sortiert
@@ -130,7 +130,6 @@ Bild: BR/Carlo Schindhelm
 URL: https://www.br.de/radio/bayern2/sendungen/zeit-fuer-bayern/hochhaus-langer-johann-erlangen-100.html
 Datum: 08.07.20
 }
-\end{frame}
 
 \note{Überleitung:
 Was macht man, wenn man ein großes Problem nicht lösen kann? Man sucht
@@ -138,6 +137,7 @@ sich ein einfacheres.
 }
 
 \begin{frame}{Primitive Gruppen}
+\pause
 Eine transitive Permutationsgruppe $G \leq \sym \Omega$ heißt
 \emph{imprimitiv},
 \pause
@@ -169,6 +169,10 @@ in
 \textcolor{green}{Zeit polynomiell beschränkt in $\abs X$ und $\abs
 \Omega$} bestimmt werden.
 \end{block}
+\vspace{1.5em}
+\pause
+Beachte: Für $H \leq \sym \Omega$ gilt
+$N_{H}(G) = H \cap N_{\sym \Omega}(G)$.
 \end{frame}
 
 \note{
@@ -180,6 +184,7 @@ bessere Algorithmen für "zusammengesetzte" Gruppen.
 \section{Strategie}
 \note{Struktur primitiver Gruppen ausnutzen}
 \begin{frame}{Permutationsisomorphie}
+\pause
 \begin{block}{Notation}
 \begin{itemize}
 \item
@@ -188,10 +193,11 @@ $\Omega$, $\Delta$ bezeichnen Mengen
 $\sym \Omega$:
 Gruppe aller Permutationen von $\Omega$
 \item
-$\alpha ^ g := g(\alpha)$
+$\omega \in \Omega,\, g \in G$. $\omega ^ g := g(\omega)$
 \end{itemize}
 \end{block}
 
+\pause
 Zwei Gruppen $G \leq \sym \Omega$ und $H \leq \sym \Delta$ heißen
 \emph{permutationsisomorph}, wenn
 Isomorphismen $f : \Omega \to \Delta$ und $\phi : G \to H$ existieren,
@@ -204,10 +210,12 @@ $\forall g \in G, \omega \in \Omega$:
 
 \begin{frame}{Struktursatz primitiver Gruppen}
 Der \emph{Sockel} einer Gruppe $G$, geschrieben
-$\soc G$, ist das Erzeugnis aller minimalen Normalteiler.
+$\soc G$, ist das Erzeugnis aller minimalen Normalteiler von $G$.
 
+\pause
 Der Sockel einer primitiven Gruppe ist charakteristisch einfach.
 
+\pause
 \begin{block}{Satz von O'Nan-Scott}
 Sei $G \leq \sym \Omega$ eine primitive Permutationsgruppe.
 Bis auf Permutationsisomorphie kennen wir
@@ -231,21 +239,24 @@ $N(\soc G)$ entsteht durch Produktop. Kranzprodukte.
 \begin{frame}{Strategie}
 Sei $G \leq \sym \Omega$ eine primitive Permutationsgruppe.
 
+\pause
 Sei $M := N_{\sym \Omega}(\soc G)$.
 Es gilt $N_{\sym \Omega}(G) = N_M(G)$.
 
+\pause
 Bestimme
 \begin{itemize}
 \item $M := N_{\sym \Omega}(\soc G)$.
+\pause
 \item Gruppenhom.
 $
     \rho : M \to S_k
 $
-mit $k \in O(\log \abs \Omega)$
-und
-\[
-    N_{\sym \Omega}(G) = N_{M}(G) = \rho ^ {-1}( N_{\rho(M)}(\rho(G)) ).
-\]
+mit $k \in O(\log \abs \Omega)$.
+%und
+%\[
+%    N_{\sym \Omega}(G) = N_{M}(G) = \rho ^ {-1}( N_{\rho(M)}(\rho(G)) ).
+%\]
 \end{itemize}
 \end{frame}
 

@@ -30,11 +30,25 @@ in polynomieller Zeit berechnet werden.
 \end{frame}
 
 \begin{frame}{Schwach kanonische Form (2)}
+\begin{block}{Typ PA}
+Sei $G \leq \sym \Omega$ eine primitive Gruppe vom Typ PA.
+Dann ist $G$ in \emph{schwach kanonischer Form}, falls
+eine einfache Gruppe
+$T \leq \sym \Delta$
+existiert,
+so dass
+$\Omega = \Delta ^ \ell$ und
+$\soc G = T ^ \ell \leq \sym( \Delta ^ \ell)$ ist.
+\end{block}
+
+\pause
 \begin{block}{Satz}
 Sei $G \leq \sym \Omega$ eine primitive Gruppe. Ein Permutationsiso. in schwach
-kanonische Form kann in (Las Vegas) nicht-deterministisch fast-linearer Zeit
+kanonische Form kann in Las Vegas fast-linearer Zeit
+und in deterministisch polynomieller Zeit
 berechnet werden.
 \end{block}
+\vspace{2em}
 \end{frame}
 
 \note{das Beste zum Schluss.
@@ -67,7 +81,7 @@ falls
 \[
 \begin{tikzcd}[ampersand replacement=\&]
     \Omega \times G
-        \ar[r, "\rho"]
+        \ar[r, "\rho_G"]
         \ar[d, "f \times \varphi"]
     \&
     \Omega
@@ -76,7 +90,7 @@ falls
     \\
     %
     \Delta \times H
-        \ar[r, "\tau"]
+        \ar[r, "\rho_H"]
     \&
     \Delta
 \end{tikzcd}
@@ -105,6 +119,26 @@ Permutationsmorphismen sind dann Funktoren zwischen diesen Gruppoiden.
 $\mathbf{PermGrp}$ enthält alle endlichen Produkte.
 \end{block}
 \end{frame}
+
+\begin{frame}{Zusammenfassung}
+Der Algorithmus:
+\begin{itemize}
+\item Schwach kanonische Form
+\item Normalisator des Sockels
+\item Logarithmische Reduktion
+\item $2 ^ {O(n)}$ Algorithmus von Wiebking
+\item Urbild unter der Reduktion
+\end{itemize}
+\end{frame}
+
+\begin{frame}[standout]
+Danke!
+\end{frame}
+
+\note{
+Abschließende Worte?
+Wie zurück vom Detaillierten zum großen Ganzen?
+}
 
 \begin{frame}{Permutationsmorphismen: Produkte (2)}
 \begin{block}{Beispiel}
@@ -165,13 +199,4 @@ G \text{ bildet mit } (P_i)_{i \leq \ell} \text{ ein Produkt }
 \prod \pi_i \text{ ist Epim. }
 \]
 \end{block}
-\end{frame}
-
-\note{
-Abschließende Worte?
-Wie zurück vom Detaillierten zum großen Ganzen?
-}
-
-\begin{frame}[standout]
-Danke!
 \end{frame}
