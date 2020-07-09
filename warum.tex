@@ -3,30 +3,105 @@ Gruppen beschreiben Symmetrien
 
 Anwendungen
 \begin{itemize}
-\item Versuchsdesign
 \item Schwarze Löcher
 \item Kryptographie (Verschlüsselung)
+\item Versuchsdesign
 \item $\ldots$
 \end{itemize}
+
+\emph{Disclaimer:} hier nur endliche Gruppen und Mengen!
+\end{frame}
+
+\begin{frame}
+\TODO{erst neut elm, dann abg, dann beide animationen, dann invbar, \ldots}
 \end{frame}
 
 \begin{frame}{Gruppen (2)}
+\begin{columns}
+\begin{column}{0.4\textwidth}
+Vier Eigenschaften
+\begin{itemize}
+\pause
+\item Neutrales Element
+\pause
+\item Abgeschlossen
+\pause
+\item Invertierbar
+\pause
+\item Assoziativ
+\end{itemize}
+\end{column}
+\begin{column}{0.5\textwidth}
+\begin{center}
+  \animategraphics[]{9}{animation/}{1}{9}
+\end{center}
+\end{column}
+\end{columns}
+Gruppe die aus Vertauschungen besteht:
+\emph{Permutationsgruppe}.
+\end{frame}
+
+\begin{frame}[noframenumbering]{Gruppen (2)}
+\begin{columns}
+\begin{column}{0.4\textwidth}
+Vier Eigenschaften
+\begin{itemize}
+\pause
+\item Neutrales Element
+\pause
+\item Abgeschlossen
+\pause
+\item Invertierbar
+\pause
+\item Assoziativ
+\end{itemize}
+\end{column}
+\begin{column}{0.5\textwidth}
+\begin{center}
+  \animategraphics[]{12}{animation/}{1}{17}
+\end{center}
+\end{column}
+\end{columns}
+Gruppe die aus Vertauschungen besteht:
+\emph{Permutationsgruppe}.
+\end{frame}
+
+\note{
+Im Folgenden immer Permutationsgruppen.
+}
+
+\begin{frame}{Gruppen (3)}
 Gruppen sind interessant
 \begin{itemize}
-\item Untersuchung mithilfe von Computern
+\item Was sind die kleinsten Bausteine\footnote{math.: einfache Gruppen} der Gruppen?
+\item Wie kann ich Gruppen zerlegen und zusammensetzen?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Klassifikation einfacher Gruppen}
+\TODO{Bild Periodensystem einfacher Gruppen. Von Kay Magaard?}
+\end{frame}
+
+\begin{frame}{Experimente}
+Untersuchung mithilfe von Computern
+\begin{itemize}
 \item Manche Fragen können einfach beantwortet werden $\ldots$
-\item $\ldots$ andere hingegen nur mit großem Aufwand
+\item $\ldots$ andere hingegen nur mit großem Aufwand.
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Normalisatoren}
-
-Normalisatoren sind Werkzeuge um Gruppen zu verstehen
+Normalisatoren:
 
 \begin{itemize}
+\item Werkzeuge um Gruppen zu verstehen
 \item für beliebige Gruppen schwer zu berechnen
-\item es ist kein effizienter Algorithmus bekannt
+\pause
+\item kein effizienter Algorithmus bekannt
 \end{itemize}
+\end{frame}
+
+\begin{frame}{Wie schwer?}
 \TODO{Bild vom Langen Johann. Captions und footnotes!}
 \note{Vergleich mit Hochhaus: wollen jemanden besuchen und kennen nur den
 Nachnamen.
@@ -44,28 +119,129 @@ Datum: 08.07.20
 }
 \end{frame}
 
-\begin{frame}{Primitive Gruppen (1)}
-Idee: Normalisatoren von \emph{primitiven Gruppen} sollten leicht zu berechnen
-sein.
+\note{Überleitung:
+Was macht man, wenn man ein großes Problem nicht lösen kann? Man sucht
+sich ein einfacheres.
+}
 
-Primitive Gruppen sind
-\begin{itemize}
-\item die Bausteine von \emph{Permutationsgruppen}
-\item gut verstanden
-\end{itemize}
+\section{Resultat}
+\begin{frame}{Primitive Gruppen}
+Eine transitive Permutationsgruppe $G \leq \sym \Omega$ heißt
+\emph{imprimitiv},
+\pause
+falls es eine nicht-triviale
+$G$-invariante Partition von $\Omega$ gibt,
+\pause
+sonst \emph{primitiv}.
+
+\pause
+\TODO{Bild Eier}
 \end{frame}
 
+\note{
+Jede Permutationsgruppe lässt sich in primitive zerlegen.
+Bausteine der Permutationsgruppen
+}
+
+%\begin{frame}{Resultat (1)}
+%\textcolor{orange}{Normalisatoren}
+%\pause
+%von
+%\textcolor{blue}{primitiven Gruppen mit nicht-regulären Sockeln}
+%\pause
+%können in
+%\textcolor{green}{polynomieller Zeit}
+%berechnet werden.
+%\end{frame}
+
 \begin{frame}{Resultat}
-\textcolor{orange}{Normalisatoren}
-\pause
-von
-\textcolor{blue}{primitiven Gruppen mit nicht-regulären Sockeln}
-\pause
-können in
-\textcolor{green}{polynomieller Zeit}
-berechnet werden.
+    Sei \textcolor{blue}{$G = \gen X \leq \sym \Omega$ eine primitive Gruppe
+    mit nicht-regulärem Sockel}.
+    \pause
+    Dann kann ein
+    \textcolor{orange}{Erzeugendensystem von $N_{\sym \Omega}(G)$}
+    \pause
+    in
+    \textcolor{green}{Zeit polynomiell beschränkt in $\abs X$ und $\abs
+    \Omega$} bestimmt werden.
 
 \pause
 Hoffnung:
 bessere Algorithmen für "zusammengesetzte" Gruppen.
 \end{frame}
+
+\section{Strategie}
+
+\begin{frame}{Permutationsisomorphie}
+\begin{block}{Notation}
+\begin{itemize}
+\item
+$\Omega$, $\Delta$ bezeichnen Mengen
+\item
+$\sym \Omega$:
+Gruppe aller Permutationen von $\Omega$
+\item
+$\alpha ^ g := g(\alpha)$
+\end{itemize}
+\end{block}
+
+Zwei Gruppen $G \leq \sym \Omega$ und $H \leq \sym \Delta$ heißen
+\emph{permutationsisomorph}, wenn
+Isomorphismen $f : \Omega \to \Delta$ und $\phi : G \to H$ existieren,
+sodass
+$\forall g \in G, \omega \in \Omega$:
+\[
+    f( \omega ^ g ) = f(\omega) ^ {\phi(g)}.
+\]
+\end{frame}
+
+\begin{frame}{Struktursatz primitiver Gruppen}
+Der \emph{Sockel} einer Gruppe $G$, geschrieben
+$\soc G$, ist das Erzeugnis aller minimalen Normalteiler.
+
+Der Sockel einer primitiven Gruppe ist charakteristisch einfach.
+
+\begin{block}{Satz von O'Nan-Scott}
+Sei $G \leq \sym \Omega$ eine primitive Permutationsgruppe.
+Bis auf Permutationsisomorphie kennen wir
+\begin{itemize}
+\item $\soc G$,
+\item $N_{\sym \Omega}( \soc G )$.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\note{Sockel charakteristisch einfach $\Rightarrow$ Rekursion zu einfachen
+Gruppen}
+
+\begin{frame}{Strategie}
+Sei $G \leq \sym \Omega$ eine primitive Permutationsgruppe.
+
+Sei $M := N_{\sym \Omega}(\soc G)$.
+Es gilt $N_{\sym \Omega}(G) = N_M(G)$.
+
+Bestimme
+\begin{itemize}
+\item $M := N_{\sym \Omega}(\soc G)$.
+\item Gruppenhom.
+$
+    \rho : M \to S_k
+$
+mit $k \in O(\log \abs \Omega)$
+und
+\[
+    N_{\sym \Omega}(G) = N_{M}(G) = \rho ^ {-1}( N_{\rho(M)}(\rho(G)) ).
+\]
+\end{itemize}
+\end{frame}
+
+\note{
+\begin{itemize}
+\item
+Perm-iso in kanonische Gestalt rekonstruieren.
+Dann Klassifikation endlicher einfacher Gruppen anwenden.
+\item
+log. Reduktion: aus einem produktoperation Kranzprodukt mache ein imprimitives
+Kranzprodukt.
+\end{itemize}
+}
