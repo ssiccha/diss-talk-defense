@@ -1,6 +1,16 @@
 \begin{frame}{Gruppen (1)}
-Gruppen beschreiben Symmetrien
+Warum Gruppen?
 
+\pause
+Gruppen
+\begin{itemize}
+\item sind nützlich
+\pause
+\item sind interessant
+\end{itemize}
+\end{frame}
+
+\note{
 Anwendungen
 \begin{itemize}
 \item Schwarze Löcher
@@ -8,15 +18,11 @@ Anwendungen
 \item Versuchsdesign
 \item $\ldots$
 \end{itemize}
-
-\emph{Disclaimer:} hier nur endliche Gruppen und Mengen!
-\end{frame}
-
-\begin{frame}
-\TODO{erst neut elm, dann abg, dann beide animationen, dann invbar, \ldots}
-\end{frame}
+}
 
 \begin{frame}{Gruppen (2)}
+Gruppen beschreiben Symmetrien.
+\\[-2em]
 \begin{columns}
 \begin{column}{0.4\textwidth}
 Vier Eigenschaften
@@ -25,10 +31,7 @@ Vier Eigenschaften
 \item Neutrales Element
 \pause
 \item Abgeschlossen
-\pause
-\item Invertierbar
-\pause
-\item Assoziativ
+\vspace{3.2em}
 \end{itemize}
 \end{column}
 \begin{column}{0.5\textwidth}
@@ -37,18 +40,17 @@ Vier Eigenschaften
 \end{center}
 \end{column}
 \end{columns}
-Gruppe die aus Vertauschungen besteht:
-\emph{Permutationsgruppe}.
+\vspace{1.4em}
 \end{frame}
 
 \begin{frame}[noframenumbering]{Gruppen (2)}
+Gruppen beschreiben Symmetrien.
+\\[-2em]
 \begin{columns}
 \begin{column}{0.4\textwidth}
 Vier Eigenschaften
 \begin{itemize}
-\pause
 \item Neutrales Element
-\pause
 \item Abgeschlossen
 \pause
 \item Invertierbar
@@ -62,24 +64,46 @@ Vier Eigenschaften
 \end{center}
 \end{column}
 \end{columns}
+\vspace{-2em}
 Gruppe die aus Vertauschungen besteht:
 \emph{Permutationsgruppe}.
+
+\pause
+\emph{Disclaimer:} hier nur endliche Gruppen und Mengen!
 \end{frame}
 
 \note{
 Im Folgenden immer Permutationsgruppen.
 }
 
-\begin{frame}{Gruppen (3)}
-Gruppen sind interessant
-\begin{itemize}
-\item Was sind die kleinsten Bausteine\footnote{math.: einfache Gruppen} der Gruppen?
-\item Wie kann ich Gruppen zerlegen und zusammensetzen?
-\end{itemize}
+\begin{frame}{Klassifikation einfacher Gruppen}
+Was sind die kleinsten Bausteine\footnote{math.: einfache Gruppen} der Gruppen?
+
+\TODO{Bild Periodensystem einfacher Gruppen. Von Kay Magaard?}
+
+Wie kann ich Gruppen zerlegen und zusammensetzen?
 \end{frame}
 
-\begin{frame}{Klassifikation einfacher Gruppen}
-\TODO{Bild Periodensystem einfacher Gruppen. Von Kay Magaard?}
+\note{
+Klassifikation ist einer der Stützpfeiler 
+}
+
+\begin{frame}{Normalisatoren}
+Normalisatoren%
+\footnote{$G, M \leq K$.
+Normalisator von $G$ in $M$ ist
+$N_M(G) = 
+\set{ m \in M ~|~ G ^ m = G }
+$.
+}:
+
+\begin{itemize}
+\item Werkzeuge um Gruppen zu verstehen
+\pause
+\item für beliebige Gruppen schwer zu berechnen
+\pause
+\item kein effizienter Algorithmus bekannt
+\end{itemize}
 \end{frame}
 
 \begin{frame}{Experimente}
@@ -87,17 +111,6 @@ Untersuchung mithilfe von Computern
 \begin{itemize}
 \item Manche Fragen können einfach beantwortet werden $\ldots$
 \item $\ldots$ andere hingegen nur mit großem Aufwand.
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Normalisatoren}
-Normalisatoren:
-
-\begin{itemize}
-\item Werkzeuge um Gruppen zu verstehen
-\item für beliebige Gruppen schwer zu berechnen
-\pause
-\item kein effizienter Algorithmus bekannt
 \end{itemize}
 \end{frame}
 
@@ -124,7 +137,6 @@ Was macht man, wenn man ein großes Problem nicht lösen kann? Man sucht
 sich ein einfacheres.
 }
 
-\section{Resultat}
 \begin{frame}{Primitive Gruppen}
 Eine transitive Permutationsgruppe $G \leq \sym \Omega$ heißt
 \emph{imprimitiv},
@@ -139,39 +151,34 @@ sonst \emph{primitiv}.
 \end{frame}
 
 \note{
-Jede Permutationsgruppe lässt sich in primitive zerlegen.
-Bausteine der Permutationsgruppen
+Wie lässt sich eine Permutationsgruppe zerlegen?
+
+Kleinsten Bausteine der Permutationsgruppen sind primitive.
 }
 
-%\begin{frame}{Resultat (1)}
-%\textcolor{orange}{Normalisatoren}
-%\pause
-%von
-%\textcolor{blue}{primitiven Gruppen mit nicht-regulären Sockeln}
-%\pause
-%können in
-%\textcolor{green}{polynomieller Zeit}
-%berechnet werden.
-%\end{frame}
-
-\begin{frame}{Resultat}
-    Sei \textcolor{blue}{$G = \gen X \leq \sym \Omega$ eine primitive Gruppe
-    mit nicht-regulärem Sockel}.
-    \pause
-    Dann kann ein
-    \textcolor{orange}{Erzeugendensystem von $N_{\sym \Omega}(G)$}
-    \pause
-    in
-    \textcolor{green}{Zeit polynomiell beschränkt in $\abs X$ und $\abs
-    \Omega$} bestimmt werden.
-
+\section{Resultat}
+\begin{frame}%{Resultat}
+\begin{block}{Satz}
+Sei \textcolor{blue}{$G = \gen X \leq \sym \Omega$ eine primitive Gruppe
+mit nicht-regulärem Sockel}.
 \pause
-Hoffnung:
-bessere Algorithmen für "zusammengesetzte" Gruppen.
+Dann kann ein
+\textcolor{orange}{Erzeugendensystem von $N_{\sym \Omega}(G)$}
+\pause
+in
+\textcolor{green}{Zeit polynomiell beschränkt in $\abs X$ und $\abs
+\Omega$} bestimmt werden.
+\end{block}
 \end{frame}
 
-\section{Strategie}
+\note{
+Erwähnen?:
+Hoffnung:
+bessere Algorithmen für "zusammengesetzte" Gruppen.
+}
 
+\section{Strategie}
+\note{Struktur primitiver Gruppen ausnutzen}
 \begin{frame}{Permutationsisomorphie}
 \begin{block}{Notation}
 \begin{itemize}
@@ -211,8 +218,15 @@ Bis auf Permutationsisomorphie kennen wir
 \end{block}
 \end{frame}
 
-\note{Sockel charakteristisch einfach $\Rightarrow$ Rekursion zu einfachen
-Gruppen}
+\note{
+Sockel charakteristisch einfach $\Rightarrow$ Rekursion zu einfachen
+Gruppen
+
+Außerdem:
+$N(\soc G)$ enthält $N(G)$.
+Index von $G$ in $N(\soc G)$ ist winzig.
+$N(\soc G)$ entsteht durch Produktop. Kranzprodukte.
+}
 
 \begin{frame}{Strategie}
 Sei $G \leq \sym \Omega$ eine primitive Permutationsgruppe.
@@ -236,12 +250,32 @@ und
 \end{frame}
 
 \note{
+Log. Reduktion einfach. Dann im Endeffekt nur Algorithmus von Daniel Wiebking.
+
+Normalisator des Sockels mehr Aufwand.
+}
+
+\begin{frame}{Logarithmische Reduktion}
+Kranzprodukt in Produktoperation
+$\rightarrow$
+imprimitive Operation
+
+\pause
+Sockel herausfaktorisieren
+\end{frame}
+
+\note{
+Produkt $\rightarrow$ imprimitiv macht $d ^ \ell$ zu $d \cdot \ell$ Punkten.
+
+Kranzprodukt:
 \begin{itemize}
-\item
-Perm-iso in kanonische Gestalt rekonstruieren.
-Dann Klassifikation endlicher einfacher Gruppen anwenden.
-\item
-log. Reduktion: aus einem produktoperation Kranzprodukt mache ein imprimitives
-Kranzprodukt.
+\item Symmetrische Gruppe auf Anzahl Komponenten von $\Omega ^ {\ast}$.
+\item Sockel einfache Gruppen + äußere Automorphismen.
+Nach herausfaktorisieren des Sockels bleiben nur die äußeren Automorphismen.
 \end{itemize}
+
+
+
+Wichtig:
+$\log ^ 2(n)$ würde nur quasipolynomiellen Algorithmus liefern.
 }
